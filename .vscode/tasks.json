@@ -1,0 +1,58 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Build",
+      "type": "shell",
+      "command": "stack build --fast",
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": true,
+        "panel": "dedicated"
+      }
+    },
+    {
+      "label": "Open Hoogle",
+      "type": "shell",
+      "command": "start chrome 127.0.0.1:8081 && stack hoogle -- server --local --port=8081",
+      "isBackground": true,
+      "presentation": {
+        "echo": true,
+        "reveal": "never",
+        "focus": false,
+        "panel": "dedicated"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Generate and open Hoogle",
+      "type": "shell",
+      "command": "stack hoogle -- generate --local && start chrome 127.0.0.1:8081 && stack hoogle -- server --local --port=8081",
+      "isBackground": true,
+      "presentation": {
+          "echo": true,
+          "reveal": "never",
+          "focus": false,
+          "panel": "dedicated"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Open haddock for current package",
+      "type": "shell",
+      "command": "stack haddock --open .",
+      "presentation": {
+          "echo": true,
+          "reveal": "never",
+          "focus": false,
+          "panel": "dedicated"
+      },
+      "problemMatcher": []
+    }
+  ]
+}

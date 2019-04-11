@@ -1,0 +1,8 @@
+name: k-means
+dependencies:
+- base >= 4.7 && < 5
+ghc-options:
+- -Wall
+executable:
+  source-dirs: src
+  main: Main.hs
